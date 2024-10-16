@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct recipifyApp: App {
+    @StateObject var authViewModel = AuthenticationViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if authViewModel.isAuthenticated {
+                RecipeListView()
+                    .environmentObject(authViewModel)
+            } else {
+                LoginView()
+                    .environmentObject(authViewModel)
+            }
         }
     }
 }
