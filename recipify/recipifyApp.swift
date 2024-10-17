@@ -23,3 +23,13 @@ struct recipifyApp: App {
         }
     }
 }
+
+extension Optional where Wrapped == String {
+    var isNotNil: Bool {
+        self != nil
+    }
+}
+
+extension String: Identifiable {
+    public var id: Self { self }
+}
