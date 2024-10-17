@@ -11,4 +11,5 @@ struct Recipe: Identifiable, Codable, Equatable {
     let id: Int
     let title: String
     let description: String
+    let ingredients: [Ingredient]
 }

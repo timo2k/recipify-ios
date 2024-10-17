@@ -54,7 +54,16 @@ struct EditRecipeView: View {
 }
 
 #Preview {
-    let sampleRecipe = Recipe(id: 1, title: "Pasta", description: "Lecker Nudeln!")
-    EditRecipeView(recipe: sampleRecipe)
-        .environmentObject(RecipeViewModel())
+    let sampleIngredients = [
+        Ingredient(id: 9, name: "Salzstangen", unit: "Packung", amount: 1),
+        Ingredient(id: 1, name: "Mett", unit: "Kilo", amount: 3)
+    ]
+    
+    EditRecipeView(recipe: Recipe(
+        id: 1,
+        title: "Mett Igel",
+        description: "Lecker lecker Mett",
+        ingredients: sampleIngredients
+    ))
+    .environmentObject(RecipeViewModel())
 }
